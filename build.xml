@@ -1,0 +1,39 @@
+<project name="Mavens Salesforce.com ANT tasks"
+         default="validate"
+         basedir="."
+         xmlns:sf="antlib:com.salesforce">
+    <taskdef uri="antlib:com.salesforce" 
+             resource="com/salesforce/antlib.xml" 
+             classpath="lib/ant-salesforce.jar"/>
+    <property file="build.properties"/>
+
+    <target name="validate">
+      <sf:deploy username="${sf.username}"
+                 password="${sf.password}"
+                 serverurl="${sf.serverurl}"
+                 deployRoot="src"
+                 checkOnly="true"
+                 pollWaitMillis="100"
+                 maxPoll="1000">
+        <runTest>{mine}</runTest>
+      </sf:deploy>
+    </target>
+
+    <target name="deploy">
+      <sf:deploy username="${sf.username}"
+                 password="${sf.password}"
+                 serverurl="${sf.serverurl}"
+                 deployRoot="src"
+                 pollWaitMillis="100"
+                 maxPoll="1000">
+        <runTest>{mine}</runTest>
+      </sf:deploy>
+    </target>
+
+    <target name="runDestructiveChanges">
+      <sf:deploy username="${sf.username}"
+                 password="${sf.password}"
+                 serverurl="${sf.serverurl}"
+                 deployRoot="destructiveChanges"/>
+    </target>
+</project>

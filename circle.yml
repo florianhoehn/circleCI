@@ -1,0 +1,6 @@
+test:
+    override:
+        - ant validate | tee output.txt
+general:
+    artifacts:
+        - "output.txt"
