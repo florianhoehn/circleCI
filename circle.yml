@@ -1,6 +1,17 @@
 test:
     override:
         - ant validate | tee output.txt
+          if grep -q "fail" testResults
+          then
+          echo "Failed test cases:"
+          cat ./testResults | grep fail | awk '{print $2, $3}'
+          exit 1
+
+          else
+          echo "Test Cases passed"
+          fi
+
+          exit 0
 general:
     artifacts:
         - "output.txt"
