@@ -1,0 +1,45 @@
+<apex:page showHeader="false"
+           sidebar="false"
+           standardStylesheets="false"
+           language="en"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           docType="html">
+<html>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Accounts</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li ng-repeat="account in vm.accounts">
+                                <a ui-sref="root.accounts.contacts({accountId: account.Id})">{{account.Name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">MassAccounts</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li ng-repeat="account in vm.massAccounts">
+                                <a ui-sref="root.accounts.contacts({accountId: account.Id})">{{account.Name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" ui-view="contacts"></div>
+    </div>
+</html>
+</apex:page>
