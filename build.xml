@@ -20,7 +20,7 @@
     </target>
 
     <target name="testDeploy">
-        <sf:deploy username="${sf.username}" password="${sf.password}"  serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="${user.dir}/src" logType="Detail" rollbackOnError="true" testLevel="RunAllTestsInOrg" checkOnly="true"/>
+        <sf:deploy username="${sf.username}" password="${sf.password}"  serverurl="${sf.serverurl}" maxPoll="1000" deployRoot="src" logType="Detail" rollbackOnError="true" testLevel="RunAllTestsInOrg" checkOnly="true"/>
     </target>
 
     <target name="deploy">
