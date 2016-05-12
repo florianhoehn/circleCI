@@ -1,4 +1,4 @@
-ant validate | tee buildResults
+ant testDeploy | tee buildResults
 
 if grep -q "Request Status: Failed" buildResults
 then
