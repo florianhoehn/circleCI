@@ -1,6 +1,6 @@
 test:
     override:
-        - ./deploy.sh | tee output
+        - ant testDeploy | tee output
 general:
     artifacts:
         - "output"
