@@ -1,3 +1,0 @@
-[submodule "circleCITest"]
-	path = circleCITest
-	url = https://github.com/florianhoehn/circleCITest.git

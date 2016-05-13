@@ -1,6 +1,6 @@
+checkout:
+  post:
+    - git submodule add --force https://github.com/mavens/CI-Scripts.git
 test:
-    override:
-        - ant testDeploy | tee output
-general:
-    artifacts:
-        - "output"
+  override:
+      - ant -lib CI-Scripts/lib/ -f CI-Scripts/build.xml build:
