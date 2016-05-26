@@ -3,4 +3,4 @@ checkout:
     - git submodule add --force https://github.com/mavens/CI-Scripts.git
 test:
   override:
-      - ant -lib CI-Scripts/lib/ -f CI-Scripts/build.xml build:
+      - ant -lib CI-Scripts/lib/ -f CI-Scripts/build.xml build
